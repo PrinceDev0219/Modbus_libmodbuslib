@@ -44,7 +44,6 @@ def main(def_args=sys.argv[1:]):
         run(['git', 'config', 'user.email', user_email])
 
     if args.start_date is None:
-        print("Hello world")
         NUM = args.days_ago
         start_date = curr_date.replace(hour=20, minute=0) - timedelta(NUM)
     else:
@@ -122,7 +121,7 @@ def arguments(argsval):
                         If not specified, the global config is used.""")
     parser.add_argument('-da', '--days_ago', type=int, required=False, default=10,
                         help="""Show them if you want to contribute a few days in advance.""")
-    parser.add_argument('-sd', '--start_date', type=str, required=False,
+    parser.add_argument('-sd', '--start_date', type=str, required=False,default="2022/04/23, 5:53:20",
                         help="""Start Date.""")
     return parser.parse_args(argsval)
 
